@@ -1,0 +1,54 @@
+/* ========================================================================
+== BUBBLE WITH A RIGHT-ANGLED TRIANGLE
+** ======================================================================== */
+
+.right, .left {
+  border-radius:5px;
+  }
+  
+/* Variant : for left positioned speech bubble
+---------------------------------------------- */
+
+.left {
+  margin-left:40px;
+}
+
+/* Variant : for right positioned speech bubble
+---------------------------------------------- */
+
+.right {
+  margin-right:40px;
+}
+
+/* THE TRIANGLE
+----------------------- */
+
+/* creates triangle */
+
+.left:after, .right:after {
+  content:"";
+  position:absolute;
+  border-style:solid;
+  display:block;
+  width:0;
+  top:0;
+  white-space:normal;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.left:after {
+  left:-40px; /* value = - border-left-width - border-right-width */
+  border-width: 0 50px 25px 0;/* vary these values to change the angle of the vertex*/
+  border-color: transparent var(--bg-color-left);
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.right:after {
+  right:-40px; /* value = - border-left-width - border-right-width */
+  border-width: 0 0 25px 50px; /* vary these values to change the angle of the vertex */
+  border-color: transparent var(--bg-color-right);
+}

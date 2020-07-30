@@ -1,0 +1,56 @@
+/* ========================================================================
+== BUBBLE WITH AN ISOCELES TRIANGLE
+** ======================================================================== */
+
+/* THE SPEECH BUBBLE
+----------------------- */
+
+.right, .left {
+    border-radius:10px;
+  }
+  
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.left {
+  left:50px;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.right {
+  right:50px;
+}
+
+/* THE TRIANGLE
+----------------------- */
+
+/* creates triangle */
+.right:after, .left:after {
+  content:"";
+  position:absolute;
+  border-style:solid;
+  display:block;
+  width:0;
+  top:9px; /* controls vertical position */
+  white-space:normal;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.left:after {
+  left:-50px; /* value = - border-left-width - border-right-width */
+  border-width:10px 50px 10px 0;
+  border-color:transparent var(--bg-color-left);
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.right:after {
+  right:-50px; /* value = - border-left-width - border-right-width */
+  border-width:10px 0 10px 50px;
+  border-color:transparent var(--bg-color-right);
+}

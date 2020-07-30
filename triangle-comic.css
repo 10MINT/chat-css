@@ -1,0 +1,45 @@
+/* ========================================================================
+== BUBBLE WITH A COMIC TRIANGLE
+** ======================================================================== */
+
+/* THE SPEECH BUBBLE
+----------------------- */
+
+.right, .left {
+    border-radius:10px;
+    margin:1em 0;
+}
+
+/* THE TRIANGLE
+----------------------- */
+
+/* creates triangle */
+.right:after, .left:after {
+  content:"";
+  position:absolute;
+  border-style:solid;
+  display:block;
+  width:0;
+  top:-20px; /* controls vertical position */
+  white-space:normal;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.left:after {
+  left:-10px; /* value = - border-left-width - border-right-width */
+  border-width:5px 50px 10px 0;
+  border-color:transparent var(--bg-color-left);
+  rotate: 45deg;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.right:after {
+  right:-10px; /* value = - border-left-width - border-right-width */
+  border-width:10px 0 5px 50px;
+  border-color:transparent var(--bg-color-right);
+  rotate: -45deg;
+}
